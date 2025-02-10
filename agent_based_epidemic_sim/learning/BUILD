@@ -20,7 +20,6 @@ licenses(["notice"])
 py_binary(
     name = "infectiousness_lookup_table",
     srcs = ["infectiousness_lookup_table.py"],
-    python_version = "PY3",
     deps = [
         requirement("absl-py"),
         requirement("jax"),
@@ -33,7 +32,6 @@ py_binary(
 py_library(
     name = "ens_simulator",
     srcs = ["ens_simulator.py"],
-    srcs_version = "PY3",
     deps = [
         requirement("numpy"),
         requirement("scipy"),
@@ -43,8 +41,6 @@ py_library(
 py_test(
     name = "ens_simulator_test",
     srcs = ["ens_simulator_test.py"],
-    python_version = "PY3",
-    srcs_version = "PY3",
     deps = [
         ":ens_simulator",
         requirement("absl-py"),
@@ -55,7 +51,6 @@ py_test(
 py_library(
     name = "abesim_data_loader",
     srcs = ["abesim_data_loader.py"],
-    srcs_version = "PY3",
     deps = [
         "//agent_based_epidemic_sim/applications/risk_learning:exposures_per_test_result_py_pb2",
         "//agent_based_epidemic_sim/core:pandemic_py_pb2",
@@ -69,8 +64,6 @@ py_test(
     data = [
         "testdata/fake_data_size_30",
     ],
-    python_version = "PY3",
-    srcs_version = "PY3",
     deps = [
         ":abesim_data_loader",
         "//agent_based_epidemic_sim/applications/risk_learning:exposures_per_test_result_py_pb2",
