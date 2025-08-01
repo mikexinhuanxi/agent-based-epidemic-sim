@@ -1,5 +1,8 @@
 # Ported dependencies.
 
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+load("@rules_cc//cc:cc_test.bzl", "cc_test")
+
 licenses(["notice"])
 
 package(default_visibility = [

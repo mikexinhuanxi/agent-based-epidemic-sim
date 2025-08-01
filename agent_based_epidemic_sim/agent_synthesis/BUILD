@@ -1,5 +1,7 @@
 # Libraries for synthesizing agents.
 
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
 licenses(["notice"])
 
 package(default_visibility = [

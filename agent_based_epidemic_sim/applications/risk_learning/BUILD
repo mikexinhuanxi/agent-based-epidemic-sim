@@ -15,6 +15,9 @@
 # Libraries for contact tracing simulation.
 
 load("@com_google_protobuf//:protobuf.bzl", "py_proto_library")
+load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+load("@rules_cc//cc:cc_test.bzl", "cc_test")
 
 package(default_visibility = [
     "//agent_based_epidemic_sim:internal",
