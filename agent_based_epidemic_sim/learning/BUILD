@@ -42,6 +42,7 @@ py_library(
 py_test(
     name = "ens_simulator_test",
     srcs = ["ens_simulator_test.py"],
+    strict_deps = False,
     deps = [
         ":ens_simulator",
         requirement("absl-py"),
@@ -66,6 +67,7 @@ py_test(
     data = [
         "testdata/fake_data_size_30",
     ],
+    strict_deps = False,
     deps = [
         ":abesim_data_loader",
         "//agent_based_epidemic_sim/applications/risk_learning:exposures_per_test_result_py_pb2",
