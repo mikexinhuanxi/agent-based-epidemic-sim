@@ -15,12 +15,13 @@
 #include "agent_based_epidemic_sim/core/uuid_generator.h"
 
 #include <atomic>
+#include <cstdint>
 
 namespace abesim {
 
-int64 ShardedGlobalIdUuidGenerator::GenerateUuid() const {
-  static std::atomic<uint32> local_id = 0;
-  return static_cast<int64>(uuid_shard_) << 48 | (local_id++);
+int64_t ShardedGlobalIdUuidGenerator::GenerateUuid() const {
+  static std::atomic<uint32_t> local_id = 0;
+  return static_cast<int64_t>(uuid_shard_) << 48 | (local_id++);
 }
 
 }  // namespace abesim

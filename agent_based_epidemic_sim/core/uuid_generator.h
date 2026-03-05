@@ -17,24 +17,26 @@
 #ifndef AGENT_BASED_EPIDEMIC_SIM_CORE_UUID_GENERATOR_H_
 #define AGENT_BASED_EPIDEMIC_SIM_CORE_UUID_GENERATOR_H_
 
+#include <cstdint>
+
 #include "agent_based_epidemic_sim/core/integral_types.h"
 
 namespace abesim {
 
 class UuidGenerator {
  public:
-  virtual int64 GenerateUuid() const = 0;
+  virtual int64_t GenerateUuid() const = 0;
   virtual ~UuidGenerator() = default;
 };
 
 class ShardedGlobalIdUuidGenerator : public UuidGenerator {
  public:
-  explicit ShardedGlobalIdUuidGenerator(int16 uuid_shard)
+  explicit ShardedGlobalIdUuidGenerator(int16_t uuid_shard)
       : uuid_shard_(uuid_shard) {}
-  int64 GenerateUuid() const override;
+  int64_t GenerateUuid() const override;
 
  private:
-  const int16 uuid_shard_;
+  const int16_t uuid_shard_;
 };
 }  // namespace abesim
 

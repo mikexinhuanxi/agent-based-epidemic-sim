@@ -2,6 +2,7 @@
 #define AGENT_BASED_EPIDEMIC_SIM_CORE_CONSTANTS_H_
 
 #include <array>
+#include <cstdint>
 #include <vector>
 
 #include "absl/time/time.h"
@@ -19,11 +20,11 @@ inline constexpr float kSusceptibility = 1;
 // the last recording. This effectively caps the maximum length of a given
 // exposure. If a longer exposure takes place, multiple Exposure objects should
 // be created.
-inline constexpr uint8 kMaxTraceLength = 1;
+inline constexpr uint8_t kMaxTraceLength = 1;
 
 // Number of days after initial infection that the host is considered to still
 // be infectious.
-inline constexpr uint8 kMaxDaysAfterInfection = 14;
+inline constexpr uint8_t kMaxDaysAfterInfection = 14;
 
 // Represents a fixed time interval between recordings in a proximity trace.
 inline const absl::Duration kProximityTraceInterval = absl::Minutes(5);
