@@ -4,9 +4,12 @@ load("@rules_cc//cc:cc_library.bzl", "cc_library")
 
 licenses(["notice"])
 
-package(default_visibility = [
-    "//agent_based_epidemic_sim:internal",
-])
+package(
+    default_applicable_licenses = ["//agent_based_epidemic_sim:license"],  # copybara:strip
+    default_visibility = [
+        "//agent_based_epidemic_sim:internal",
+    ],
+)
 
 proto_library(
     name = "population_proto",
