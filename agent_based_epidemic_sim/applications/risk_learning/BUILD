@@ -19,9 +19,12 @@ load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 load("@rules_cc//cc:cc_test.bzl", "cc_test")
 
-package(default_visibility = [
-    "//agent_based_epidemic_sim:internal",
-])
+package(
+    default_applicable_licenses = ["//agent_based_epidemic_sim:license"],
+    default_visibility = [
+        "//agent_based_epidemic_sim:internal",
+    ],
+)
 
 licenses(["notice"])
 
